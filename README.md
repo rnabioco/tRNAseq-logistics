@@ -12,5 +12,6 @@ This repository is licensed under the [MIT License]. You can generally use or ex
 
 ----
 [Jekyll]: https://jekyllrb.com
+[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
 [GitHub Pages]: https://docs.github.com/en/pages
 [MIT License]: https://en.wikipedia.org/wiki/MIT_License
