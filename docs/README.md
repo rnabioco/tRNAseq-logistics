@@ -1,6 +1,6 @@
 # About
 
-This site is hosted [GitHub Pages] at https://lkwhite.github.io/jtd-test
+This site is hosted [GitHub Pages] at https://lkwhite.github.io/tRNAseq
 
 This repository is licensed under the [MIT License]. You can generally use or extend upon it as you see fit, as long as you preserve the license.
 
