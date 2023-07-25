@@ -5,7 +5,7 @@ nav_order: 1
 description: An overview of direct tRNA sequencing on Oxford Nanopore platforms.
 ---
 
-# Nanopore tRNA sequencing
+# Nanopore tRNA sequencing!
 {: .fs-9 }
 Library workflows, logistics, and analysis considerations
 {: .fs-6 .fw-300 }
