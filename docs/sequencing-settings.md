@@ -10,7 +10,7 @@ MinKNOW is the operating software that coordinates setting up a sequencing run o
 ## Why use custom sequencing settings for tRNA?
 Back when we first started making tRNA sequencing libraries using the approach from Thomas _et al._ 2021 and running them with default parameters, our runs looked like this:
 
-![](/assets/images/2022_tRNA_samplerun.png)
+![]("/assets/images/2022_tRNA_samplerun.png")
 
 Note the high proportion of "adapter-only" reads (beige bar) relative to the bright green bar that MinKNOW believes are genuine sequencing reads. [Lucas _et. al_ 2023](https://pubmed.ncbi.nlm.nih.gov/37024678/) expertly dissects the reasons behind this issue. In brief, MinKNOW's default settings expect the _adapter_ portion of reads (or adapter-only reads) to transit through the pore in 5 seconds or less, and expect the remaining portion of the RNA molecule (that is, the thing you're actually looking to sequence), termed the _strand_, to take at least 2 seconds to pass through the pore.  These default settings from ONT were selected with mRNA sequencing in mind. 
 
