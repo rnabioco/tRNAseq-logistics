@@ -30,4 +30,4 @@ This site provides an overview of all published strategies for generating nanopo
 On our [GitHub repository](https://github.com/lkwhite/trnaseq) you will find reference files for aligning budding yeast and _E. coli_ tRNA libraries prepared using each of the described workflows.
 
 ## Acknowledgements
-Thanks to members of the Hesselberth Lab for listening to me vent about my library woes and providing useful suggestions, Androo Markham of ONT for advice on implementing live short read capture of RNAs in MinKNOW, and the Novoa Lab for pointing the way to higher tRNA-seq yields with [nano-tRNAseq](https://github.com/novoalab/Nano-tRNAseq).
+Thanks to members of the [Hesselberth Lab](hesselberthlab.org) for listening to me vent about my library woes and providing useful suggestions, Androo Markham of ONT for advice on implementing live short read capture of RNAs in MinKNOW, and the Novoa Lab for pointing the way to higher tRNA-seq yields with [nano-tRNAseq](https://github.com/novoalab/Nano-tRNAseq).
