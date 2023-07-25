@@ -13,7 +13,7 @@ Library workflows, logistics, and analysis considerations
 Direct RNA sequencing is uniquely suited to the study of tRNA biology because it enables the simultaneous capture of signals derived from a tRNA's sequence and modification status. This site is a collection of practical information about sequencing tRNAs via nanopore, collated and maintained by Laura White in the [Hesselberth Lab](hesselberthlab.org).
 
 {: .warning }
-Note: This documentation has been written for RNA002 chemistry. ONT's RNA004 direct RNA sequencing kit is expected to be released in early access mode in the 2nd half of 2023, and will use a different nanopore and helicase.
+>Note: This documentation has been written for RNA002 chemistry. ONT's RNA004 direct RNA sequencing kit is expected to be released in early access mode in the 2nd half of 2023, and will use a different nanopore and helicase.
 
 ## Nanopore sequencing basics
  Nanopore direct RNA sequencing attaches specific adapters to the 3´ end of native RNA molecules, enabling them to be threaded through a pore in a charged membrane. As the nucleic acid passes through the pore, it differentially occludes the flow of ions through the aperture in a sequence and modification-dependent fashion. These changes in current over time can be converted to nucleotide sequence, and also used to infer the presence of RNA modifications. The RNA002 sequencing protocol from Oxford Nanopore also includes an optional reverse transcription step that is thought to help linearize structured molecules and increase library throughput; however, this cDNA molecule is discarded when the native RNA strand is threaded through the pore.
