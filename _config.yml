@@ -142,7 +142,6 @@ callouts:
     color: red
 
 plugins:
-  - jekyll-github-metadata
   - jekyll-default-layout
 
 kramdown:
