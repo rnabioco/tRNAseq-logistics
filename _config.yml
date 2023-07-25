@@ -2,8 +2,8 @@ title: tRNA sequencing with nanopore
 description: Notes on library prep and analysis
 theme: just-the-docs
 
-url: 'https://lkwhite.github.io/'
-baseurl: 'tRNAseq/'
+url: https://lkwhite.github.io
+baseurl: /tRNAseq
 
 aux_links:
   GH Repository: https://github.com/lkwhite/tRNAseq
