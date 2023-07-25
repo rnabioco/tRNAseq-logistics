@@ -30,7 +30,7 @@ MinKNOW's configuration files live at the following locations:
 
 You will need root permissions to edit and add files in the `/package/` folder. We have done this as follows:
 
-1. At the bottom of `flow_cells.toml`, add the following lines:
+-  At the bottom of `flow_cells.toml`, add the following lines:
 
 ```
 # custom configs
@@ -45,12 +45,12 @@ connector = "minion_mk1"
 connector = "promethion"
 ```
 
-2. Navigate to the `/sequencing/` folder and identify the `.toml` files for direct RNA sequencing (`sequencing_MIN106_RNA.toml` for MinION and `sequencing_PRO002_RNA.toml` for PromethION). Copy the relevant file(s) to create a second version appended `_short`, e.g.:
+- Navigate to the `/sequencing/` folder and identify the `.toml` files for direct RNA sequencing (`sequencing_MIN106_RNA.toml` for MinION and `sequencing_PRO002_RNA.toml` for PromethION). Copy the relevant file(s) to create a second version appended `_short`, e.g.:
 
 ```
 sudo cp sequencing_PRO002_RNA.toml sequencing_PRO002_RNA_short.toml 
 ```
-3. Open the new `_short` version of the `RNA.toml` file and find the section containing the Read Classification Parameters. It should look like this:
+- Open the new `_short` version of the `RNA.toml` file and find the section containing the Read Classification Parameters. It should look like this:
 
 ```
 [analysis_configuration.read_classification.parameters]
@@ -62,7 +62,7 @@ rules_in_execution_order = [
      "adapter=         (median_before,gt,160)&(median_before,lt,280)&(local_range,gt,5)&(local_range,lt,50)&(local_median,gt,50)&(local_median,lt,120)&(local_median_sd,gt,0.5)&(local_median_sd,lt,2.5)&(duration,lt,5)",
      "strand=          (local_range,gt,25)&(local_range,lt,60)&(local_median,gt,60)&(local_median,lt,115)&(local_median_sd,gt,1)&(local_median_sd,lt,4)&(duration,gt,2)",
 ```
-4. Edit the last number on each of the final lines above so that the duration for `adapter` ends in `lt,2` and the duration for `strand` ends in `gt,1`. These are the thresholds in seconds described above.
+- Edit the last number on each of the final lines above so that the duration for `adapter` ends in `lt,2` and the duration for `strand` ends in `gt,1`. These are the thresholds in seconds described above.
 
 The approach above has been tested for R9.4 Flongle and MinION flow cells running on a MK1B MinION connected to M1 Macbook Pro running MacOS Ventura, and on R9.4 flow cells running on a beta PromethION 24 connected to a desktop running Ubuntu 20.04. Both of these combinations were tested with MinKNOW version 23.04.3.
 
