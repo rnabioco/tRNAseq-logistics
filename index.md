@@ -10,7 +10,7 @@ description: An overview of direct tRNA sequencing on Oxford Nanopore platforms.
 Library workflows, logistics, and analysis considerations
 {: .fs-6 .fw-300 }
 
-Direct RNA sequencing is uniquely suited to the study of tRNA biology because it enables the simultaneous capture of signals derived from a tRNA's sequence and modification status. This site is a collection of practical information about sequencing tRNAs via nanopore, collated and maintained by Laura White in the [Hesselberth Lab](hesselberthlab.org).
+Direct RNA sequencing is uniquely suited to the study of tRNA biology because it enables the simultaneous capture of signals derived from a tRNA's sequence and modification status. This site is a collection of practical information about sequencing tRNAs via nanopore, collated and maintained by Laura White in the [Hesselberth Lab](https://hesselberthlab.org).
 
 {: .warning }
 > Note: This documentation has been written for RNA002 chemistry. ONT's RNA004 direct RNA sequencing kit is expected to be released in early access mode in the 2nd half of 2023, and will use a different nanopore and helicase.
@@ -30,4 +30,4 @@ This site provides an overview of all published strategies for generating nanopo
 On our [GitHub repository](https://github.com/lkwhite/trnaseq) you will find reference files for aligning budding yeast and _E. coli_ tRNA libraries prepared using each of the described workflows.
 
 ## Acknowledgements
-Thanks to members of the [Hesselberth Lab](hesselberthlab.org) for listening to me vent about my library woes and providing useful suggestions, Androo Markham of ONT for advice on implementing live short read capture of RNAs in MinKNOW, and the Novoa Lab for pointing the way to higher tRNA-seq yields with [nano-tRNAseq](https://github.com/novoalab/Nano-tRNAseq).
+Thanks to members of the [Hesselberth Lab](https://hesselberthlab.org) for listening to me vent about my library woes and providing useful suggestions, Androo Markham of ONT for advice on implementing live short read capture of RNAs in MinKNOW, and the Novoa Lab for pointing the way to higher tRNA-seq yields with [nano-tRNAseq](https://github.com/novoalab/Nano-tRNAseq).
