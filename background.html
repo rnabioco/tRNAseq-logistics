@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="An overview of direct tRNA sequencing on Oxford Nanopore platforms.">
 
-<title>tRNA-seq logistics</title>
+<title>Background – tRNA-seq logistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,11 +89,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./background.html"> 
+    <a class="nav-link active" href="./background.html" aria-current="page"> 
 <span class="menu-text">Background</span></a>
   </li>  
   <li class="nav-item">
@@ -121,13 +120,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#nanopore-trna-sequencing" id="toc-nanopore-trna-sequencing" class="nav-link active" data-scroll-target="#nanopore-trna-sequencing">Nanopore tRNA sequencing</a>
+  <li><a href="#background-and-prior-work" id="toc-background-and-prior-work" class="nav-link active" data-scroll-target="#background-and-prior-work">Background and prior work</a>
   <ul class="collapse">
-  <li><a href="#nanopore-sequencing-basics" id="toc-nanopore-sequencing-basics" class="nav-link" data-scroll-target="#nanopore-sequencing-basics">Nanopore sequencing basics</a></li>
-  <li><a href="#sequencing-trna" id="toc-sequencing-trna" class="nav-link" data-scroll-target="#sequencing-trna">Sequencing tRNA</a></li>
-  <li><a href="#what-youll-find-here" id="toc-what-youll-find-here" class="nav-link" data-scroll-target="#what-youll-find-here">What you’ll find here</a></li>
-  <li><a href="#associated-files-code" id="toc-associated-files-code" class="nav-link" data-scroll-target="#associated-files-code">Associated files &amp; code</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#thomas-et-al.-acs-nano-2021" id="toc-thomas-et-al.-acs-nano-2021" class="nav-link" data-scroll-target="#thomas-et-al.-acs-nano-2021">Thomas <em>et al.</em>, ACS Nano (2021)</a></li>
+  <li><a href="#white-et-al.-rna-2023" id="toc-white-et-al.-rna-2023" class="nav-link" data-scroll-target="#white-et-al.-rna-2023">White <em>et al.</em>, RNA (2023)</a></li>
+  <li><a href="#lucas-et-al.-nature-biotechnology-2023" id="toc-lucas-et-al.-nature-biotechnology-2023" class="nav-link" data-scroll-target="#lucas-et-al.-nature-biotechnology-2023">Lucas <em>et al.</em>, Nature Biotechnology (2023)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -137,14 +134,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">tRNA-seq logistics</h1>
+<h1 class="title">Background</h1>
 </div>
 
-<div>
-  <div class="description">
-    An overview of direct tRNA sequencing on Oxford Nanopore platforms.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -159,47 +151,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="nanopore-trna-sequencing" class="level1">
-<h1>Nanopore tRNA sequencing</h1>
-<p>Direct RNA sequencing is uniquely suited to the study of tRNA biology because it enables the simultaneous capture of signals derived from a tRNA’s sequence and modification status. This site is a collection of practical information about sequencing tRNAs via nanopore, collated and maintained by Laura White in the <a href="https://hesselberthlab.org">Hesselberth Lab</a>.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This documentation has been written for RNA002 chemistry. ONT’s RNA004 direct RNA sequencing kit is expected to be released in early access mode in the 2nd half of 2023, and will use a different nanopore and helicase.</p>
-</div>
-</div>
-<section id="nanopore-sequencing-basics" class="level2">
-<h2 class="anchored" data-anchor-id="nanopore-sequencing-basics">Nanopore sequencing basics</h2>
-<p>Nanopore direct RNA sequencing attaches specific adapters to the 3¬¥ end of native RNA molecules, enabling them to be threaded through a pore in a charged membrane. As the nucleic acid passes through the pore, it differentially occludes the flow of ions through the aperture in a sequence and modification-dependent fashion. These changes in current over time can be converted to nucleotide sequence, and also used to infer the presence of RNA modifications. The RNA002 sequencing protocol from Oxford Nanopore also includes an optional reverse transcription step that is thought to help linearize structured molecules and increase library throughput; however, this cDNA molecule is discarded when the native RNA strand is threaded through the pore.</p>
+<section id="background-and-prior-work" class="level1">
+<h1>Background and prior work</h1>
+<p>As of the time of this writing (July 2023) three groups have reported tRNA sequencing on Oxford Nanopore platforms:</p>
+<section id="thomas-et-al.-acs-nano-2021" class="level3">
+<h3 class="anchored" data-anchor-id="thomas-et-al.-acs-nano-2021"><a href="https://pubmed.ncbi.nlm.nih.gov/34618430/">Thomas <em>et al.</em>, ACS Nano (2021)</a></h3>
+<p>This paper from the UCSC Nanopore group established proof of principle for direct RNA sequencing of <em>in vitro</em> transcribed and biological <em>E. coli</em> tRNAs on the Oxford MinION platform. The authors defined <a href="https://github.com/mitenjain/marginAlign-tRNA">alignment parameters</a> for nanopore-sequenced tRNAs, and also tested a variety of combinations of individual purified biological tRNAs, synthetic tRNAs, and total tRNAs ligated with individual adapter species. Finally, this paper describes correlations between known sites of modifications on <em>E. coli</em> tRNAs and mismatches (base calling “errors”) at the same and/or neighboring nucleotide positions.</p>
+<p>The authors note that most sequencing runs were performed for under 24 hours due to “due to a deterioration in functional channels over time,” and that they restarted some experiments up to 5 times due to pore clogging issues. Yields are in the range of 50-100k reads, depending on the sample.</p>
 </section>
-<section id="sequencing-trna" class="level2">
-<h2 class="anchored" data-anchor-id="sequencing-trna">Sequencing tRNA</h2>
-<p>tRNAs are highly structured nucleic acids that are decorated with many RNA modifications (an average of 13 RNA modifications per tRNA molecule in budding yeast). A major limitation of previous tRNA sequencing methods was the necessity for reverse transcription to generate cDNA for Illumina sequencing, despite the fact that reverse transcriptases often stall on these molecules. Moreover, the size (70-100 nt) and structure of tRNAs require additional considerations when enriching for these molecules in sequencing libraries.</p>
-<p>Many tRNA sequencing workflows, including all nanopore tRNA sequencing protocols published to-date, have taken advantage of the unique molecular properties of tRNAs to add specific adapters to these molecules. All mature tRNAs have a 5¬¥ phosphate and an NCCA overhand on their 3¬¥end, to which the amino acid is added. This aminoacyl group will rapidly deacylate under non-acidic conditions, or can be specifically removed with base treatment. In the absence of an amino acid, the mature tRNA stem is then competent for ligation to a double stranded adapter using <a href="https://www.neb.com/products/m0239-t4-rna-ligase-2-dsrna-ligase#Product%20Information">T4 RNA ligase 2</a>.</p>
+<section id="white-et-al.-rna-2023" class="level3">
+<h3 class="anchored" data-anchor-id="white-et-al.-rna-2023"><a href="https://pubmed.ncbi.nlm.nih.gov/36854608/">White <em>et al.</em>, RNA (2023)</a></h3>
+<p>This publication from our group applied the approach from Thomas <em>et al.</em> above to perform direct tRNA sequencing of <em>S. cerevisiae</em> tRNA on the Oxford MinION platform. We generated tRNA sequencing libraries from five different yeast strains with alterations in tRNA maturation/processing/degradation pathways. We used these tRNA sequencing data to identify analogous basecalling error signals (primarily mismatches) produced by changes in tRNA modifications when tRNA splicing is disrupted, including 2´-phosphates installed during RNA ligation. An GitHub repository for this work can be found <a href="https://github.com/hesselberthlab/RNARePore">here</a>.</p>
+<p>NB: despite consultation with Oxford Nanopore and substantial in-lab troubleshooting, in our hands neither changing RNA inputs nor adapter ratios made a substantive impact on either library throughput or the ratio of free adapter to sequencing reads reported in the MinKNOW software during the run.</p>
 </section>
-<section id="what-youll-find-here" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-find-here">What you’ll find here</h2>
-<p>This site provides an overview of all published strategies for generating nanopore tRNA sequencing libraries, as well as differences between these protocols and practical considerations for tRNA sequencing, alignment, and analysis. The <strong>Sequencing Settings</strong> section describes our implemention of a simpler RNA short read mode for the MinKNOW sequencing software to enable running and basecalling tRNA sequencing libraries in real time, without the need to save out fast5 bulk files for downstream simulation.</p>
-</section>
-<section id="associated-files-code" class="level2">
-<h2 class="anchored" data-anchor-id="associated-files-code">Associated files &amp; code</h2>
-<p>On our <a href="https://github.com/lkwhite/trnaseq">GitHub repository</a> you will find reference files for aligning budding yeast and <em>E. coli</em> tRNA libraries prepared using each of the described workflows.</p>
-</section>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>Thanks to:</p>
-<ul>
-<li>members of the <a href="https://hesselberthlab.org">Hesselberth Lab</a> for listening to me vent about my library woes and providing useful suggestions</li>
-<li>Androo Markham at Oxford Nanopore for advice on implementing live short read capture of RNAs in MinKNOW</li>
-<li>the Novoa Lab for pointing the way to higher tRNA-seq yields with <a href="https://github.com/novoalab/Nano-tRNAseq">nano-tRNAseq</a></li>
-</ul>
+<section id="lucas-et-al.-nature-biotechnology-2023" class="level3">
+<h3 class="anchored" data-anchor-id="lucas-et-al.-nature-biotechnology-2023"><a href="https://pubmed.ncbi.nlm.nih.gov/37024678/">Lucas <em>et al.</em>, Nature Biotechnology (2023)</a></h3>
+<p>This paper from the Novoa lab elucidated the reason for the perplexing behavior above —&nbsp;the MinKNOW software distinguishes free adapters from RNA reads based primarily on the duration of time a molecule spends transiting the pore. A major contribution of this manuscript is the implementation of a custom configuration for capturing tRNA reads that would otherwise be discarded during sequencing due to their short lengths. As described on the <a href="https://github.com/novoalab/Nano-tRNAseq">nano-tRNAseq repository</a>, this workflow involves first performing a sequencing run using the MinKNOW default configuration, and saving out a bulk fast5 file. This bulk file is then re-run in a “simulation” mode in MinKNOW using a custom .toml file that contains a) alternative parameters for classifying RNA reads and adapter sequences based duration in the pore and b) a path to the bulk fast5 file. Using this approach, the authors report higher yield MinION runs across <em>S. cerevisiae</em> samples with and without deletions of several tRNA modification enzymes, under either normal growth conditions, heat, or oxidative stress. These comparisons enabled them to further characterize basecalling errors produced by select tRNA modifications.</p>
 
 
 </section>

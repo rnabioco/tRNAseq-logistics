@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="An overview of direct tRNA sequencing on Oxford Nanopore platforms.">
 
-<title>tRNA-seq logistics</title>
+<title>Library preparation &amp; structures – tRNA-seq logistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -102,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Sequencing settings</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./library-structures.html"> 
+    <a class="nav-link active" href="./library-structures.html" aria-current="page"> 
 <span class="menu-text">Library preparation &amp; structures</span></a>
   </li>  
 </ul>
@@ -121,13 +120,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#nanopore-trna-sequencing" id="toc-nanopore-trna-sequencing" class="nav-link active" data-scroll-target="#nanopore-trna-sequencing">Nanopore tRNA sequencing</a>
+  <li><a href="#direct-mrna-sequencing-workflow" id="toc-direct-mrna-sequencing-workflow" class="nav-link active" data-scroll-target="#direct-mrna-sequencing-workflow">Direct mRNA sequencing workflow</a>
   <ul class="collapse">
-  <li><a href="#nanopore-sequencing-basics" id="toc-nanopore-sequencing-basics" class="nav-link" data-scroll-target="#nanopore-sequencing-basics">Nanopore sequencing basics</a></li>
-  <li><a href="#sequencing-trna" id="toc-sequencing-trna" class="nav-link" data-scroll-target="#sequencing-trna">Sequencing tRNA</a></li>
-  <li><a href="#what-youll-find-here" id="toc-what-youll-find-here" class="nav-link" data-scroll-target="#what-youll-find-here">What you’ll find here</a></li>
-  <li><a href="#associated-files-code" id="toc-associated-files-code" class="nav-link" data-scroll-target="#associated-files-code">Associated files &amp; code</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#oxford-nanopore-sqk-rna002-nanopore-sequencing-kit" id="toc-oxford-nanopore-sqk-rna002-nanopore-sequencing-kit" class="nav-link" data-scroll-target="#oxford-nanopore-sqk-rna002-nanopore-sequencing-kit">Oxford nanopore SQK-RNA002 nanopore sequencing kit</a></li>
+  </ul></li>
+  <li><a href="#the-original-minimalist-approach-ucsc-nanopore-group" id="toc-the-original-minimalist-approach-ucsc-nanopore-group" class="nav-link" data-scroll-target="#the-original-minimalist-approach-ucsc-nanopore-group">The original, minimalist approach (UCSC Nanopore Group):</a>
+  <ul class="collapse">
+  <li><a href="#source-thomas-et-al.-2021-acs-nano" id="toc-source-thomas-et-al.-2021-acs-nano" class="nav-link" data-scroll-target="#source-thomas-et-al.-2021-acs-nano">Source: Thomas <em>et al.</em> 2021, ACS Nano</a></li>
+  </ul></li>
+  <li><a href="#nano-trnaseq-novoa-lab-crg" id="toc-nano-trnaseq-novoa-lab-crg" class="nav-link" data-scroll-target="#nano-trnaseq-novoa-lab-crg">nano-tRNAseq (Novoa lab, CRG)</a>
+  <ul class="collapse">
+  <li><a href="#source-lucas-et-al.-2023-nature-biotechnology" id="toc-source-lucas-et-al.-2023-nature-biotechnology" class="nav-link" data-scroll-target="#source-lucas-et-al.-2023-nature-biotechnology">Source: Lucas <em>et al.</em> 2023, Nature Biotechnology</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -137,14 +140,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">tRNA-seq logistics</h1>
+<h1 class="title">Library preparation &amp; structures</h1>
 </div>
 
-<div>
-  <div class="description">
-    An overview of direct tRNA sequencing on Oxford Nanopore platforms.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -159,49 +157,76 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="nanopore-trna-sequencing" class="level1">
-<h1>Nanopore tRNA sequencing</h1>
-<p>Direct RNA sequencing is uniquely suited to the study of tRNA biology because it enables the simultaneous capture of signals derived from a tRNA’s sequence and modification status. This site is a collection of practical information about sequencing tRNAs via nanopore, collated and maintained by Laura White in the <a href="https://hesselberthlab.org">Hesselberth Lab</a>.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This documentation has been written for RNA002 chemistry. ONT’s RNA004 direct RNA sequencing kit is expected to be released in early access mode in the 2nd half of 2023, and will use a different nanopore and helicase.</p>
-</div>
-</div>
-<section id="nanopore-sequencing-basics" class="level2">
-<h2 class="anchored" data-anchor-id="nanopore-sequencing-basics">Nanopore sequencing basics</h2>
-<p>Nanopore direct RNA sequencing attaches specific adapters to the 3¬¥ end of native RNA molecules, enabling them to be threaded through a pore in a charged membrane. As the nucleic acid passes through the pore, it differentially occludes the flow of ions through the aperture in a sequence and modification-dependent fashion. These changes in current over time can be converted to nucleotide sequence, and also used to infer the presence of RNA modifications. The RNA002 sequencing protocol from Oxford Nanopore also includes an optional reverse transcription step that is thought to help linearize structured molecules and increase library throughput; however, this cDNA molecule is discarded when the native RNA strand is threaded through the pore.</p>
+<p>Published methods for generating direct tRNA sequencing libraries</p>
+<section id="direct-mrna-sequencing-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="direct-mrna-sequencing-workflow">Direct mRNA sequencing workflow</h2>
+<section id="oxford-nanopore-sqk-rna002-nanopore-sequencing-kit" class="level3">
+<h3 class="anchored" data-anchor-id="oxford-nanopore-sqk-rna002-nanopore-sequencing-kit">Oxford nanopore SQK-RNA002 nanopore sequencing kit</h3>
+<p>The methods below assume you have some knowledge of how these libraries are generated. Here’s the diagram from the protocol:</p>
 </section>
-<section id="sequencing-trna" class="level2">
-<h2 class="anchored" data-anchor-id="sequencing-trna">Sequencing tRNA</h2>
-<p>tRNAs are highly structured nucleic acids that are decorated with many RNA modifications (an average of 13 RNA modifications per tRNA molecule in budding yeast). A major limitation of previous tRNA sequencing methods was the necessity for reverse transcription to generate cDNA for Illumina sequencing, despite the fact that reverse transcriptases often stall on these molecules. Moreover, the size (70-100 nt) and structure of tRNAs require additional considerations when enriching for these molecules in sequencing libraries.</p>
-<p>Many tRNA sequencing workflows, including all nanopore tRNA sequencing protocols published to-date, have taken advantage of the unique molecular properties of tRNAs to add specific adapters to these molecules. All mature tRNAs have a 5¬¥ phosphate and an NCCA overhand on their 3¬¥end, to which the amino acid is added. This aminoacyl group will rapidly deacylate under non-acidic conditions, or can be specifically removed with base treatment. In the absence of an amino acid, the mature tRNA stem is then competent for ligation to a double stranded adapter using <a href="https://www.neb.com/products/m0239-t4-rna-ligase-2-dsrna-ligase#Product%20Information">T4 RNA ligase 2</a>.</p>
 </section>
-<section id="what-youll-find-here" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-find-here">What you’ll find here</h2>
-<p>This site provides an overview of all published strategies for generating nanopore tRNA sequencing libraries, as well as differences between these protocols and practical considerations for tRNA sequencing, alignment, and analysis. The <strong>Sequencing Settings</strong> section describes our implemention of a simpler RNA short read mode for the MinKNOW sequencing software to enable running and basecalling tRNA sequencing libraries in real time, without the need to save out fast5 bulk files for downstream simulation.</p>
+<section id="the-original-minimalist-approach-ucsc-nanopore-group" class="level2">
+<h2 class="anchored" data-anchor-id="the-original-minimalist-approach-ucsc-nanopore-group">The original, minimalist approach (UCSC Nanopore Group):</h2>
+<section id="source-thomas-et-al.-2021-acs-nano" class="level3">
+<h3 class="anchored" data-anchor-id="source-thomas-et-al.-2021-acs-nano">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/34618430/">Thomas <em>et al.</em> 2021, ACS Nano</a></h3>
+<section id="workflow-overview" class="level4">
+<h4 class="anchored" data-anchor-id="workflow-overview">Workflow overview</h4>
+<ol type="1">
+<li>Gel purify tRNA</li>
+<li>Ligate ~1 µg tRNA to pre-annealed double stranded adapters</li>
+<li>Gel purify ligation products</li>
+<li>Attach helicase-loaded RMX adapter</li>
+<li>SPRI bead clean up</li>
+<li>Load libraries onto flow cell</li>
+</ol>
 </section>
-<section id="associated-files-code" class="level2">
-<h2 class="anchored" data-anchor-id="associated-files-code">Associated files &amp; code</h2>
-<p>On our <a href="https://github.com/lkwhite/trnaseq">GitHub repository</a> you will find reference files for aligning budding yeast and <em>E. coli</em> tRNA libraries prepared using each of the described workflows.</p>
+<section id="custom-adapter-sequences-rnadna-hybrids" class="level4">
+<h4 class="anchored" data-anchor-id="custom-adapter-sequences-rnadna-hybrids">Custom adapter sequences (RNA:DNA hybrids)</h4>
+<p>5´ splint adapter: <code>/5/CCTAAGrArGrCrArArGrArArGrArArGrCrCrUrGrGrN</code></p>
+<p>3´ splint adapter: <code>/5Phos/rGrGrCrUrUrCTTCTTGCTCTTAGGTAGTAGGTTC</code></p>
 </section>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>Thanks to:</p>
+<section id="technical-considerations" class="level4">
+<h4 class="anchored" data-anchor-id="technical-considerations">Technical considerations</h4>
 <ul>
-<li>members of the <a href="https://hesselberthlab.org">Hesselberth Lab</a> for listening to me vent about my library woes and providing useful suggestions</li>
-<li>Androo Markham at Oxford Nanopore for advice on implementing live short read capture of RNAs in MinKNOW</li>
-<li>the Novoa Lab for pointing the way to higher tRNA-seq yields with <a href="https://github.com/novoalab/Nano-tRNAseq">nano-tRNAseq</a></li>
+<li>Gel purification may cause fragmentation of tRNAs</li>
+<li>The DNA bases in both splint adapters will be interpreted by the RNA basecalling model and will not align well</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="nano-trnaseq-novoa-lab-crg" class="level2">
+<h2 class="anchored" data-anchor-id="nano-trnaseq-novoa-lab-crg">nano-tRNAseq (Novoa lab, CRG)</h2>
+<section id="source-lucas-et-al.-2023-nature-biotechnology" class="level3">
+<h3 class="anchored" data-anchor-id="source-lucas-et-al.-2023-nature-biotechnology">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/37024678/">Lucas <em>et al.</em> 2023, Nature Biotechnology</a></h3>
+<section id="workflow-overview-1" class="level4">
+<h4 class="anchored" data-anchor-id="workflow-overview-1">Workflow overview</h4>
+<ol type="1">
+<li>Column purify ~1 µg of small RNA (17-200 nt) using <a href="https://www.zymoresearch.com/collections/rna-clean-concentrator-kits-rcc/products/rna-clean-concentrator-5">Zymo Clean &amp; Concentrator-5</a> kit (max input 10 µg)</li>
+<li>Ligate ~1 µg input to pre-annealed double stranded adapters</li>
+<li>SPRI bead clean up</li>
+<li>Attach nanopore RTA adapter</li>
+<li>SPRI bead clean up</li>
+<li>Reverse transcribe with Maxima RT</li>
+<li>SPRI bead clean up</li>
+<li>Attach helicase-loaded RMX adapter</li>
+<li>SPRI bead clean up</li>
+<li>Load libraries onto flow cell</li>
+</ol>
+</section>
+<section id="custom-adapter-sequences" class="level4">
+<h4 class="anchored" data-anchor-id="custom-adapter-sequences">Custom adapter sequences</h4>
+<p>5′ RNA splint adapter: <code>/5/rCrCrUrArArGrArGrCrArArGrArArGrArArGrCrCrUrGrGrN</code></p>
+<p>3′ splint RNA:DNA adapter: <code>/5Phos/rGrGrCrUrUrCrUrUrCrUrUrGrCrUrCrUrUrArGrGrArArArArArArArArArAAAA</code></p>
+</section>
+<section id="technical-considerations-1" class="level4">
+<h4 class="anchored" data-anchor-id="technical-considerations-1">Technical considerations</h4>
+<ul>
+<li>In our hands, SPRI bead cleanup of ligated tRNAs is highly inefficient</li>
+<li>Maxima RT is a highly processive enzyme, and should make it through much of the structure and modifications on tRNAs. However, if it truncates early it’s no big deal because the cDNA strand is not sequenced.</li>
 </ul>
 
 
+</section>
 </section>
 </section>
 
