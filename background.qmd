@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Background
-permalink: /background/
-nav_order: 2
 ---
 
 # Background and prior work
